@@ -1,0 +1,18 @@
+= actions/checkout
+
+
+== use
+
+[source, yaml]
+----
+   - uses: actions/checkout@v4
+----
+
+The uses keyword specifies that this step will run v4 of the actions/checkout action. 
+
+
+=== action
+
+This is an action that checks out your repository onto the runner, allowing you to run scripts or other actions against your code (such as build and test tools). 
+
+You should use the checkout action any time your workflow will use the repository's code.

@@ -1,0 +1,45 @@
+= Transmission Control Protocol
+
+
+== Acronyme
+
+TCP signifie "Transmission Control Protocol" en anglais, ce qui se traduit en français par "Protocole de Contrôle de Transmission". 
+
+
+== Définition
+
+TCP est l'un des principaux protocoles de communication utilisés dans les réseaux informatiques pour assurer la fiabilité de la transmission de données entre deux dispositifs connectés, généralement des ordinateurs, sur un réseau, comme Internet.
+
+== Caractéristiques
+
+
+=== Fiabilité 
+
+TCP garantit la livraison fiable des données en s'assurant que les données sont reçues dans l'ordre correct et sans erreurs. Si des données sont perdues ou corrompues en transit, TCP les détecte et demande leur retransmission.
+
+
+=== Ordre de livraison 
+
+TCP garantit que les données sont reçues dans le même ordre dans lequel elles ont été envoyées. Cela est essentiel pour de nombreuses applications, telles que le transfert de fichiers et la navigation sur le web.
+
+
+=== Contrôle de congestion 
+
+TCP surveille la congestion du réseau et adapte automatiquement le débit de transmission pour éviter la congestion excessive, ce qui peut entraîner une perte de données.
+
+=== Connexion orientée 
+
+Avant de commencer à échanger des données, les dispositifs qui utilisent TCP établissent une connexion, ce qui garantit une communication fiable et bidirectionnelle.
+
+=== Numérotation des séquences 
+
+TCP attribue un numéro de séquence à chaque paquet de données, ce qui permet au destinataire de reconstruire correctement les données dans l'ordre.
+
+=== Acknowledgments (Accusés de réception) 
+
+Le protocole TCP utilise des accusés de réception (ACK) pour confirmer la réception des données. L'émetteur attend généralement un ACK avant d'envoyer la prochaine tranche de données.
+
+
+== En résumé 
+
+En résumé, TCP est un protocole de communication fiable et orienté connexion qui assure la transmission des données de manière ordonnée et sans erreur dans les réseaux informatiques. Il est largement utilisé pour prendre en charge un large éventail d'applications, notamment la navigation sur le web, le transfert de fichiers, la messagerie électronique et bien d'autres.
