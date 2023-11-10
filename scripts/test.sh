@@ -1,5 +1,4 @@
 #!/bin/bash
 echo "🟢 test started"
-cd ..
-npm run jest
+npm run test
 echo "✅ test done"
