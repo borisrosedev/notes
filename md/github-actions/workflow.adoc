@@ -1,0 +1,35 @@
+= Workflow
+
+== Definition
+
+A workflow is a configurable automated process that will run one or more jobs. 
+
+Workflows are defined by a YAML file checked in to your repository and will run when:
+[%step]
+* triggered by an event in your repository
+* triggered manually
+* triggered at a defined schedule.
+
+
+== Where are worflows defined ?
+
+Workflows are defined in the .github/workflows directory in a repository, and a repository can have multiple workflows, each of which can perform a different set of tasks. 
+
+=== Example
+
+[%step]
+* You can have one workflow to build and test pull requests
+* Another workflow to deploy your application every time a release is created
+* Still another workflow that adds a label every time someone opens a new issue.
+
+== What a worflow must contain
+
+A workflow must contain the following basic components:
+
+[%step]
+* One or more events that will trigger the workflow.
+* One or more jobs, each of which will execute on a runner machine and run a series of one or more steps.
+
+=== Script or/and Action
+
+Each step can either run a script that you define or run an action, which is a reusable extension that can simplify your workflow.
