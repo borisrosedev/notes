@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "🟢 test started"
 cd ..
-npm run test
+npm run jest
 echo "✅ test done"
