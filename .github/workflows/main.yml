@@ -1,0 +1,13 @@
+name: main-branch worflow
+run-name: ${{ github.actor }} main-branch workflow
+on: [push]
+jobs:
+    inital-message:
+        runs-on: ubuntu-latest
+        steps:
+            # - uses: actions/checkout@v4
+            # - uses: actions/setup-node@v3
+                # with:
+                #     node-version: '14'
+            - run: echo "🟢 initial message job has started"
+            - run: echo "✅ initial message job done"
