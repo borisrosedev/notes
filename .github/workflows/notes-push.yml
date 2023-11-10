@@ -2,33 +2,18 @@ name: Notes Push
 run-name: ${{ github.actor }} / Notes Push
 on: [push]
 jobs:
-    setup:
-        runs-on: ubuntu-latest
-        
-        steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-node@v3
-              with: 
-                node-version: '14'
-            - run: ./init.sh
-
-    build:
-        needs: setup
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node: [14, 16]
-        steps:
-        - uses: actions/setup-node@v3
-          with:
-            node-version: ${{ matrix.node }}
-
-    test:
-        needs: build
-        runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: ./scripts
-        steps:
-          - uses: actions/checkout@v4
-          - run: ./test.sh
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+            node: [14, 16]    
+    # defaults:
+    #     run:
+    #       working-directory: ./scripts
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v4
+      - run: ./init.sh
+      - run: ./scripts/test.sh
