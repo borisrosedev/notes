@@ -3,9 +3,18 @@ run-name: ${{ github.actor }} dev-worflow
 on:
     push:
         branches:
-            dev
+            - dev
+    workflow_call:
+        inputs:
+            username:
+                description: 'My github name passed from the caller workflow'
+                default: ${{github.actor}}
+                required: false
+                type: string
+
 jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "test"
+            - name: Testing if my name is showns
+              run: echo dev worflow initiated by ${{ inputs.username }}

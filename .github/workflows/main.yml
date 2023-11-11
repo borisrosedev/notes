@@ -3,7 +3,14 @@ run-name: ${{ github.actor }} main-branch workflow
 on: 
     push :
         branches:
-            main
+            - main
+    pull_request:
+        branches-ignore:
+            - dev
+            - testing
+            - adoc 
+            - diagrams
+
 jobs:
     inital-message:
         runs-on: ubuntu-latest
