@@ -6,7 +6,7 @@ on:
       types: [requested]
       branches:
         - 'dev'
-
+        
     workflow_dispatch:
       inputs:
           logLevel:
