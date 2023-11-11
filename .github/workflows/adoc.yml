@@ -1,5 +1,5 @@
-name: adoc-worflow
-run-name: ${{ github.actor }} adoc-worflow
+name: adoc-workflow
+run-name: ${{ github.actor }} adoc-workflow
 on:
     push:
         paths:

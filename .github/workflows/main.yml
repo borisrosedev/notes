@@ -1,4 +1,4 @@
-name: main-branch worflow
+name: main-branch workflow
 run-name: ${{ github.actor }} main-branch workflow
 on: 
     push :

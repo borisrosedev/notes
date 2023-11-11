@@ -2,7 +2,7 @@ name: helper-workflow
 run-name: ${{ github.actor }} helper-workflow
 on:
     workflow_run:
-      workflows: ["dev-worflow"]
+      workflows: ["dev-workflow"]
       types: [requested]
       branches:
         - 'dev'
