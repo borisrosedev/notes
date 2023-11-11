@@ -8,7 +8,11 @@ jobs:
     test-job-one:
         runs-on: ubuntu-latest
         steps:
-        - name: test-step-one
-          uses: ./.github/worflows/helper
+        - name: Checkout Repository
+          uses: actions/checkout@v2 
+
         - name: test-step-two
-          run: echo 'test done'
+          uses: ./.github/worflows/helper
+          
+        - name: test-step-three
+          run: echo '✅ test done'
