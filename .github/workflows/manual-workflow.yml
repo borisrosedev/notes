@@ -1,0 +1,35 @@
+name: Manual Workflow
+run-name: ${{ github.action }} Manual Workflow
+on:
+    workflow_dispatch:
+        inputs:
+            logtype:
+                description: 'info type'
+                required: true
+                default: 'warning'
+                type: choice
+                options:
+                - info
+                - warning
+                - debug
+            tags:
+                description: 'test scenario tags'
+                required: false
+                type: boolean
+            environment:
+                description: 'environment to run tests against'
+                type: environment
+                required: true
+
+jobs:
+    log-the-inputs:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                echo "Log Info: $LOGTYPE"
+                echo "Tags: $TAGS"
+                echo "Environment: $ENVIRONMENT"
+              env:
+                LOGTYPE: ${{ github.event.inputs.logtype }}
+                TAGS: ${{ inputs.tags }}
+                ENVIRONMENT: ${{ inputs.environment }}
