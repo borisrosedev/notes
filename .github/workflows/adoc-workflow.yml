@@ -1,0 +1,13 @@
+name: Adoc Workflow
+run-name: ${{ github.actor }} Adoc Workflow
+on:
+    push:
+        paths:
+            - '**.adoc'
+          
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: adoc test
+              run: echo "test"

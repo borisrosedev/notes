@@ -1,8 +1,18 @@
-name: main-branch worflow
-run-name: ${{ github.actor }} main-branch workflow
-on: [push]
+name: Main Workflow
+run-name: ${{ github.actor }} Main Workflow
+on: 
+    push :
+        branches:
+            - main
+    pull_request:
+        branches-ignore:
+            - dev
+            - testing
+            - adoc 
+            - diagrams
+
 jobs:
-    inital-message:
+    initial-message:
         runs-on: ubuntu-latest
         steps:
             # - uses: actions/checkout@v4

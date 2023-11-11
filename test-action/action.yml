@@ -1,0 +1,11 @@
+# test-action/action.yml
+name: 'Test Action'
+description : 'Run test tasks'
+inputs:
+  environment:
+    description: 'environment to run tests against'
+    required: false
+    default : 'test'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
