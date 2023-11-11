@@ -1,0 +1,41 @@
+name: helper-workflow
+run-name: ${{ github.actor }} helper-workflow
+on:
+    workflow_run:
+      workflows: ["dev"]
+      types: [requested]
+      branches:
+        - 'dev'
+
+    workflow_dispatch:
+      inputs:
+          logLevel:
+            description: 'Log level'
+            required: true
+            default: 'warning'
+            type: choice
+            options:
+                - info
+                - warning
+                - debug
+           
+          environment:
+            description: 'Environment to run tests against'
+            type: environment
+            default: 'test'
+            required: false
+    
+jobs:
+    helper-job-one:
+        if:  ${{ inputs.environment }} 
+        runs-on: ubuntu-latest
+        steps:
+            - name: job-env
+              run: echo "env defined"
+    helper-job-two:
+        if: ${{ always() }}
+        needs: [helper-job-one]
+        runs-on: ubuntu-latest
+        steps:
+            - name: helper-job-2-step-one
+              run : echo "step-one done" 

@@ -8,7 +8,7 @@ on:
         inputs:
             username:
                 description: 'My github name passed from the caller workflow'
-                default: '${{ github.actor }}'
+                default: 'Boris Rose'
                 required: false
                 type: string
 
