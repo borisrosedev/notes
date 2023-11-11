@@ -15,11 +15,11 @@ on:
 jobs:
   helper-job:
     runs-on: ubuntu-latest
+  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Run Test Action
         uses: ./test-action
         with:
-          environment: ${{ github.event.inputs.environment }}
+          environment: ${{ github.event.inputs.environment || 'test' }}
