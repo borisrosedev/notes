@@ -1,0 +1,22 @@
+name: Additional WF
+run-name: ${{ github.actor }} Additional WF
+on:
+    workflow_run:
+        workflows: [Manual Workflow]
+        types:
+            - completed
+        branches: [main]
+
+jobs:
+    on-manual-workflow-success:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        steps:
+            - run: |
+                echo 'additional workflow : manuel workflow is a success 🎉'
+    on-manual-workflow-failure:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        steps:
+            - run: |
+                echo 'additional workflow : manuel workflow is a failure 😐 '
