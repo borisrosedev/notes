@@ -8,7 +8,7 @@ on:
         inputs:
             username:
                 description: 'My github name passed from the caller workflow'
-                default: 'Boris-Rose'
+                default: 'boris-rose'
                 required: false
                 type: string
 
@@ -16,5 +16,5 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - name: Testing if my name is showns
+            - name: Testing if my name is shown
               run: echo dev worflow initiated by ${{ inputs.username }}
