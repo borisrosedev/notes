@@ -1,5 +1,5 @@
-name: dev-workflow
-run-name: ${{ github.actor }} dev-worflow
+name: Dev Workflow
+run-name: ${{ github.actor }} Dev Worflow
 on:
   push:
     branches:

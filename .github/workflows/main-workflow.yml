@@ -1,5 +1,5 @@
-name: main-branch workflow
-run-name: ${{ github.actor }} main-branch workflow
+name: Main Workflow
+run-name: ${{ github.actor }} Main Workflow
 on: 
     push :
         branches:

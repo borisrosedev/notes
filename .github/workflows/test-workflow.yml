@@ -1,0 +1,25 @@
+# .github/workflows/test-workflow.yml
+name: Test Workflow
+run-name: ${{ github.actor }} Test Workflow
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: false
+        default: 'test'
+
+jobs:
+  helper-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run Test Action
+        uses: ./test-action
+        with:
+          environment: ${{ github.event.inputs.environment }}
