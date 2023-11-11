@@ -1,5 +1,5 @@
 name: Additional WF
-run-name: ${{ github.actor }} Additional WF
+run-name: Additional WF
 on:
     workflow_run:
         workflows: [Manual Workflow]

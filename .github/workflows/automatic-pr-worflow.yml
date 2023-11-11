@@ -1,0 +1,23 @@
+name: Automatic Pull Request WF
+run-name: Automatic PR WF
+
+on:
+    push:
+        branches:
+            - git-actions
+
+jobs:
+    create-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            
+            - name: Create Pull Request
+              uses: peter-evans/create-pull-request@v4
+              with:
+                base: main
+                branch: git-actions
+                title: 'Automated Pull Request'
+                body: 'This pull request was automatically created using GitHub Actions. '
+
