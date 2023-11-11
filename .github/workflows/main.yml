@@ -1,6 +1,9 @@
 name: main-branch worflow
 run-name: ${{ github.actor }} main-branch workflow
-on: [push]
+on: 
+    push :
+        branches:
+            main
 jobs:
     inital-message:
         runs-on: ubuntu-latest
