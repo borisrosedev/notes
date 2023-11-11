@@ -1,3 +1,5 @@
+name: Manual Workflow
+run-name: ${{ github.action }} Manual Workflow
 on:
     workflow_dispatch:
         inputs:
